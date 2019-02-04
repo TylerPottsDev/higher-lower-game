@@ -16,7 +16,6 @@ for (let i = 0; i < btns.length; i++) {
 }
 
 function PlayGame (choice) {
-	let timer;
 	last_number = current_number;
 	current_number = getRandomInt();
 	current_elem.innerText = current_number;
