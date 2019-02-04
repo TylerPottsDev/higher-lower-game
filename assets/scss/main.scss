@@ -1,0 +1,121 @@
+$primary: #AF1E2D;
+$secondary: #FFCE00;
+$dark: #171717;
+$light: #F3F3F3;
+
+body {
+	margin: 0;
+	background: $dark;
+	font-family: "Exo 2", "Helvetica", sans-serif;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+
+	h1 {
+		color: $light;
+		text-transform: uppercase;
+	}
+
+	h3 {
+		color: $light;
+		font-size: 48px;
+
+		&.correct {
+			color: $secondary;
+		}
+		&.incorrect {
+			color: $primary;
+		}
+	}
+
+	.game-view {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+
+		.number-view {
+			.number {
+				color: $light;
+				font-size: 125px;
+				line-height: 100px;
+				font-weight: 700;
+				margin-right: 15px;
+				padding: 15px;
+				background: transparentize($color: $light, $amount: 0.85);
+			}
+
+			p {
+				color: $light;
+				text-align: center;
+			}
+		}
+
+		.button-group {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			color: $light;
+
+			div {
+				margin-bottom: 30px;
+				display: flex;
+				justify-content: space-between;
+
+				&:last-of-type {
+					margin-bottom: 0px;
+				}
+
+				.btn {
+					width: 50px;
+					height: 50px;
+					border: none;
+					outline: none;
+					font-size: 28px;
+					font-weight: 700;
+					line-height: 50px;
+					padding: 0;
+					margin: 0;
+					cursor: pointer;
+
+					&#higher {
+						color: $light;
+						background: $primary;
+
+						&:hover {
+							background: lighten($color: $primary, $amount: 5);
+						}
+						&:active {
+							background: darken($color: $primary, $amount: 5);
+						}
+					}
+					&#lower {
+						color: $dark;
+						background: $secondary;
+
+						&:hover {
+							background: lighten($color: $secondary, $amount: 5);
+						}
+						&:active {
+							background: darken($color: $secondary, $amount: 5);
+						}
+					}
+				}
+
+				p {
+					margin-left: 15px;
+				}
+			}
+			
+		}
+	}
+}
+
+.hide {
+	transition: all 1s linear;
+	opacity: 0;
+}
