@@ -12,26 +12,21 @@
 	<div class="wrapper">
 		<h1>Higher or Lower Game</h1>
 		<div class="game-view">
-			<div class="number-view hide">
-				<div class="number" id="last">0</div>
-				<p>LAST<br>NUMBER</p>
-			</div>
-			<div class="number-view">
-				<div class="number" id="current">0</div>
-				<p>CURRENT<br>NUMBER</p>
-			</div>
+			<div class="number" id="current">0</div>
 			<div class="button-group">
 				<div>
-					<button class="btn" id="higher">&#8613;</button>
+					<button class="btn" id="higher" data-value="higher">&#8613;</button>
 					<p>Higher</p>
 				</div>
 				<div>
-					<button class="btn" id="lower">&#8615;</button>
+					<button class="btn" id="lower" data-value="lower">&#8615;</button>
 					<p>Lower</p>
 				</div>
 			</div>
 		</div>
-		<h3 class="result correct hide" id="result">WOO!</h3>
+		<h3>SCORE</h3>
+		<div class="score" id="score">0</div>
+		<h3 class="result hide" id="result">Correct!</h3>
 	</div>
 
 	<script src="assets/js/main.js"></script>

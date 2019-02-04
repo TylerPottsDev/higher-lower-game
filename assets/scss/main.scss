@@ -23,7 +23,9 @@ body {
 
 	h3 {
 		color: $light;
-		font-size: 48px;
+		font-size: 28px;
+		line-height: 1;
+		margin: 15px;
 
 		&.correct {
 			color: $secondary;
@@ -31,6 +33,7 @@ body {
 		&.incorrect {
 			color: $primary;
 		}
+		transition: all 0.5s linear;
 	}
 
 	.game-view {
@@ -38,37 +41,27 @@ body {
 		justify-content: center;
 		align-content: center;
 
-		.number-view {
-			.number {
-				color: $light;
-				font-size: 125px;
-				line-height: 100px;
-				font-weight: 700;
-				margin-right: 15px;
-				padding: 15px;
-				background: transparentize($color: $light, $amount: 0.85);
-			}
-
-			p {
-				color: $light;
-				text-align: center;
-			}
+		.number {
+			color: $light;
+			font-size: 125px;
+			line-height: 1;
+			font-weight: 700;
+			padding: 15px;
+			margin-right: 15px;
+			background: transparentize($color: $light, $amount: 0.85);
+			transition: all 0.5s linear;
 		}
 
 		.button-group {
 			display: flex;
 			flex-direction: column;
+			justify-content: space-between;
 			align-items: flex-start;
 			color: $light;
 
 			div {
-				margin-bottom: 30px;
 				display: flex;
 				justify-content: space-between;
-
-				&:last-of-type {
-					margin-bottom: 0px;
-				}
 
 				.btn {
 					width: 50px;
@@ -93,6 +86,17 @@ body {
 							background: darken($color: $primary, $amount: 5);
 						}
 					}
+					&#match {
+						color: $dark;
+						background: $light;
+
+						&:hover {
+							background: lighten($color: $light, $amount: 5);
+						}
+						&:active {
+							background: darken($color: $light, $amount: 5);
+						}
+					}
 					&#lower {
 						color: $dark;
 						background: $secondary;
@@ -113,9 +117,19 @@ body {
 			
 		}
 	}
+
+	.score {
+		color: $light;
+		font-size: 42px;
+		line-height: 1;
+		font-weight: 700;
+		padding: 15px;
+		background: transparentize($color: $secondary, $amount: 0.85);
+		transition: all 0.5s linear;
+	}
 }
 
 .hide {
-	transition: all 1s linear;
+	transition: all 0.5s linear;
 	opacity: 0;
 }
